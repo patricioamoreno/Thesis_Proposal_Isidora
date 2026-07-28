@@ -22,13 +22,17 @@
 |---|---|
 | Word original (citas autor-año) | 12 |
 | LaTeX con citas numeradas IEEE (sin recortes) | 11 |
-| **LaTeX + recortes aplicados** | **10** ✅ |
+| LaTeX + recortes de contenido administrativo/metodológico | 10 |
+| + párrafo de síntesis, distinción DEM/continuo, hipótesis/objetivos reescritos | 11 |
+| **+ ajuste de espaciado de títulos (`titlesec`, sin tocar texto)** | **10** ✅ |
 
-Se aplicaron los 4 recortes propuestos: (1) "Available Resources" condensado a lo esencial,
-(2) protocolo PIV/PTV (A3.1/A3.2) resumido sin perder las decisiones metodológicas clave,
-(3) A2.1 (mallado) resumido en el párrafo de independencia de malla, (4) ajuste liviano de
-redacción en el cierre de la sección 1.1. Ningún recorte tocó la Hipótesis, los Objetivos
-Específicos (SO1-SO5) ni el contenido científico central de las secciones 1.3–1.6.
+Se aplicaron 4 recortes de contenido administrativo/metodológico (detalle de hardware, protocolo
+PIV/PTV, mallado, redacción de 1.1) para llegar a 10 páginas. Luego, al incorporar las revisiones
+de fondo (ver sección siguiente), el documento volvió a subir a 11 páginas; para recuperar las 10 sin
+sacrificar ninguno de esos contenidos nuevos, se ajustó únicamente el espaciado antes/después de
+los subtítulos (`\subsection`/`\subsubsection`, vía el paquete `titlesec`) — un cambio puramente de
+layout, cero palabras eliminadas. Ningún recorte de contenido tocó la Hipótesis, los Objetivos
+Específicos ni el contenido científico central de las secciones 1.3–1.6.
 
 ### Nota sobre la fuente
 El Word original usa **Verdana 10pt** en el cuerpo (no 12pt como asumí al principio — lo corregí
@@ -36,7 +40,36 @@ tras medirlo directamente en el XML del docx). Verdana no está disponible en Ov
 que usé **Liberation Sans** (clon métrico de Arial) como reemplazo más cercano. Si tu casa de
 estudios exige una fuente específica, es un solo cambio en `main.tex` (línea `\setmainfont{...}`).
 
-## Referencias pendientes
+## Revisiones de contenido (revisión estilo comité doctoral)
+Además de la conversión a LaTeX, se aplicaron las siguientes correcciones de fondo, surgidas de una
+revisión crítica del Capítulo 1, la Hipótesis y los Objetivos:
+
+1. **Párrafo de síntesis nuevo**, al cierre del Capítulo 1, que declara explícitamente la brecha
+   única que ataca la tesis (antes había 4 brechas paralelas sin sintetizar).
+2. **Distinción DEM vs. continuo** (nuevo párrafo, cierre de 1.5.2): se ubican explícitamente
+   Chauchat (2013, modelo continuo Euler-Euler con reología µ(I)) y Maurin et al. (2015/2016,
+   DEM acoplado a fluido 1D) como los dos enfoques existentes más cercanos, mostrando que ninguno
+   mantiene ambos lados del acoplamiento resueltos con alta fidelidad simultáneamente — que es
+   exactamente el aporte de esta tesis. Se agregaron ambas referencias completas al `.bib`.
+3. **Hipótesis reescrita**: se separó la proposición causal/falsable (párrafo 1) de los valores
+   numéricos esperados (párrafo 2, explícitamente etiquetados como "estimaciones de trabajo, no
+   precondiciones"). El punto (iii) ya no depende de $u_\tau$ (que generaba una inconsistencia con
+   el rango experimental de SO2) sino de $\phi_v$, consistente con (i) y (ii) y con el resto de la
+   tesis.
+4. **SO1 y SO2 reescritos** en modo "qué se busca saber" en vez de "qué se va a construir/medir" —
+   el detalle metodológico que tenían ya vive en las secciones A2/A3 de Metodología.
+5. **SO4 ajustado** para comprometerse explícitamente a determinar $\phi_v^{*}$ (el umbral crítico
+   de la hipótesis (iii)), cerrando el círculo hipótesis→objetivo.
+6. **SO5 reescrito sin "Bagnold"**: se reemplazó por el vocabulario de reología granular
+   ($\mu(I)$) ya introducido en 1.1/1.2, evitando introducir un concepto nuevo sin desarrollo previo
+   en el estado del arte.
+7. **Sección de Novedad Científica condensada**, eliminando justificación que quedó redundante
+   tras agregar el párrafo de síntesis.
+
+Estos cambios se discutieron y decidieron en conversación antes de aplicarse; si quieres revertir
+o ajustar alguno, dímelo y lo modifico directo en `body.tex`.
+
+
 De todas las citas del cuerpo, **165 quedaron correctamente enlazadas** a una referencia con datos
 completos (ya en `references.bib`). Pero **80 referencias únicas citadas en el texto no tenían
 ficha bibliográfica** en ninguna de las dos listas del Word original (ni en el bloque numerado
