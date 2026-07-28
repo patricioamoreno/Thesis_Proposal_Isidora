@@ -1,0 +1,81 @@
+% ============================================================
+%  Propuesta de Tesis Doctoral - Isidora Linacre
+%  Convertido desde Word a LaTeX (Overleaf-ready)
+%  Sistema de referencias: numerico estilo IEEE (ieeetr.bst)
+% ============================================================
+\documentclass[10pt]{article}
+
+\usepackage{fontspec}
+\setmainfont{Liberation Sans} % sustituto de Verdana (no disponible en TeX Live/Overleaf); mas angosto y cercano en densidad
+
+\usepackage[
+  paperwidth=8.5in, paperheight=11in,
+  top=0.394in, bottom=0.492in, left=0.472in, right=0.472in,
+  headheight=0.276in, footskip=0.30in
+]{geometry}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{ieeetr}
+
+\setcounter{secnumdepth}{-\maxdimen} % los numeros 1.1, 1.2, etc. ya vienen escritos a mano en el titulo
+
+\begin{document}
+
+% ---------------- PORTADA ----------------
+\begin{center}
+\textbf{MODELING OF NON-DILUTE PARTICLE REGIME TO PREDICT THE PHYSICAL MICROSCALE BEHAVIOR OF TURBULENT MULTIPHASIC INTERACTION IN OPEN-CHANNEL FLOWS}
+
+\vspace{1em}
+\textbf{Doctorado en Ciencias de la Ingeniería}
+
+\textbf{Facultad de Ingeniería y Ciencias Aplicadas}
+
+\textbf{Universidad de los Andes}
+
+\vspace{1em}
+\textbf{Isidora Paz Linacre Arredondo}
+
+\textbf{Patricio Alejandro Moreno Casas, PhD}
+
+\vspace{2em}
+Santiago, \textbf{DATE}
+
+\vspace{2em}
+\textbf{Thesis Proposal Manuscript}
+\end{center}
+
+The present document corresponds to the thesis project proposal entitled:
+
+\begin{center}
+\textbf{MODELING OF NON-DILUTE PARTICLE REGIME TO PREDICT THE PHYSICAL MICROSCALE BEHAVIOR OF TURBULENT MULTIPHASIC INTERACTION IN OPEN-CHANNEL FLOWS}
+
+Presented by
+
+\textbf{Isidora Paz Linacre Arredondo}
+
+\includegraphics[width=1.9in,height=0.86in]{figures/image1.png}
+
+Isidora Paz Linacre Arredondo
+
+Patricio Alejandro Moreno Casas, PhD
+\end{center}
+
+\clearpage
+
+% ==========================================================
+%  CUERPO: Capitulo 1 -> antes de Referencias
+%  (esta es la zona que debe caber en 10 paginas)
+% ==========================================================
+\input{body.tex}
+
+\clearpage
+\textbf{BIBLIOGRAPHIC REFERENCES}
+
+\bibliography{references}
+
+\end{document}
